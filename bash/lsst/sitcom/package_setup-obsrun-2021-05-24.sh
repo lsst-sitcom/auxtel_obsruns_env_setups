@@ -100,11 +100,11 @@ cd $REPOS
 git clone https://github.com/lsst-dm/atmospec.git
 cd atmospec
 setup -j -r .
-scons opt=3 -j 4
 git fetch --all
 git checkout tickets/DM-26719
 git reset origin/tickets/DM-26719 --hard
 git pull
+scons opt=3 -j 4
 
 printf '\nSetting up lsst-sitcom/rapid_analysis \n'
 cd $REPOS
