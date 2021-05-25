@@ -12,7 +12,7 @@ set -e
 # This script is ONLY to be used for the AuxTel run of 2021-05-24
 source ${LOADSTACK}
 
-printf "This run uses the image of exp-w-2021-21-c0020"
+printf "This run uses the image of exp-w-2021-21-c0020\n"
 
 ## Verify the proper build cycle is used
 LSST_IMAGE='exp-w-2021-21-c0020'
