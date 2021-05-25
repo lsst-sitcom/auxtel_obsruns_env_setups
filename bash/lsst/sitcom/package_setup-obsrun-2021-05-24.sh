@@ -160,8 +160,8 @@ cd $REPOS
 git clone https://github.com/lsst-ts/ts_standardscripts.git
 cd ts_standardscripts
 git fetch --all
-git checkout tickets/DM-29350
-git reset origin/tickets/DM-29350 --hard
+git checkout tickets/DM-29217
+git reset origin/tickets/DM-29217 --hard
 git pull
 setup -j -r .
 
