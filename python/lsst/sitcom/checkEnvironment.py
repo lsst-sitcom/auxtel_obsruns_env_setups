@@ -48,7 +48,7 @@ def testEnvironment(bash_script, installed_packages_directory='~'):
                         print(f"{pkgName} is correct.")
                     else:
                         correct.append(False)
-                        print(f"{pkgName} is wrong!  Should be {rightEnvironment[pkgName]}, but yours is {location}")
+                        print(f"{pkgName} is wrong!  Should be {rightEnvironment[pkgName]}")
                     foundPkg = True
                 else:
                     try:
