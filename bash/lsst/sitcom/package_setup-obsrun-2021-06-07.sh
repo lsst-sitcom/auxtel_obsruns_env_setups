@@ -12,10 +12,10 @@ set -e
 # This script is ONLY to be used for the AuxTel run of 2021-06-07
 source ${LOADSTACK}
 
-printf "This run uses the image of exp-w-2021-21-c0020\n"
-
 ## Verify the proper build cycle is used
-LSST_IMAGE='exp-w-2021-21-c0020'
+LSST_IMAGE='exp_w_2021_21_c0020.002'
+
+printf "This run uses the image of ${LSST_IMAGE}\n"
 
 RVAL=$(echo $JUPYTER_IMAGE_SPEC | cut -d ':'  -f 2)
 if [[ $RVAL == *"${LSST_IMAGE}"* ]]; then
