@@ -17,7 +17,7 @@ printf "This run uses the image of exp-w-2021-21-c0020\n"
 ## Verify the proper build cycle is used
 LSST_IMAGE='exp-w-2021-21-c0020'
 
-RVAL=$(hostname)
+RVAL=$(echo $JUPYTER_IMAGE_SPEC | cut -d ':'  -f 2)
 if [[ $RVAL == *"${LSST_IMAGE}"* ]]; then
   printf "Nublado image is correct\n"
 else
