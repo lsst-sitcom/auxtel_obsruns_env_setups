@@ -13,7 +13,7 @@ set -e
 source ${LOADSTACK}
 
 ## Verify the proper build cycle is used
-LSST_IMAGE='w_2021_24_c0021.000'
+LSST_IMAGE='w_2021_26_c0021.000'
 
 printf "This run uses the image of ${LSST_IMAGE}\n"
 
@@ -39,7 +39,7 @@ fi
 setup lsst_distrib
 
 ## Verify the proper lsst_distrib is loaded
-LSST_DISTRIB_VER='w_2021_24'
+LSST_DISTRIB_VER='w_2021_26'
 
 RVAL=$(eups list lsst_distrib)
 if [[ $RVAL == *"${LSST_DISTRIB_VER}"* ]]; then
