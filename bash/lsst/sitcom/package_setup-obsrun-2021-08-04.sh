@@ -140,8 +140,8 @@ cd $REPOS
 git clone https://github.com/lsst-ts/ts_externalscripts.git
 cd ts_externalscripts
 git fetch --all
-git checkout tickets/develop
-git reset origin/tickets/develop --hard
+git checkout develop
+git reset origin/develop --hard
 git pull
 setup -j -r .
 
@@ -150,8 +150,8 @@ cd $REPOS
 git clone https://github.com/lsst-ts/ts_observing_utilities.git
 cd ts_observing_utilities
 git fetch --all
-git checkout tickets/develop
-git reset origin/tickets/develop --hard
+git checkout develop
+git reset origin/develop --hard
 git pull
 setup -j -r .
 
@@ -160,8 +160,8 @@ cd $REPOS
 git clone https://github.com/lsst-ts/ts_standardscripts.git
 cd ts_standardscripts
 git fetch --all
-git checkout tickets/develop
-git reset origin/tickets/develop --hard
+git checkout develop
+git reset origin/develop --hard
 git pull
 setup -j -r .
 
