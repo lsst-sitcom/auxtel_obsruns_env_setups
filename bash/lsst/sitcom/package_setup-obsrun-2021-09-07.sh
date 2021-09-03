@@ -184,6 +184,7 @@ cat <<EOT >> $FILE_PATH
 EOT
 
 printf "setup -j daf_butler -r "$REPOS"daf_butler \n" >> $FILE_PATH
+printf "setup -j obs_lsst -r "$REPOS"obs_lsst \n" >> $FILE_PATH
 printf "setup -j rapid_analysis -r "$REPOS"rapid_analysis \n" >> $FILE_PATH
 printf "setup -j atmospec -r "$REPOS"atmospec \n" >> $FILE_PATH
 printf "setup -j ts_externalscripts -r "$REPOS"ts_externalscripts \n" >> $FILE_PATH
