@@ -63,7 +63,17 @@ echo 'Repositories will cloned and setup in the directory:'$REPOS"\n"
 mkdir -v ${REPOS}
 
 # Check if folders are already present before installing
-printf 'Setting up lsst-dm/daf_butler \n'
+printf 'Setting up lsst/obs_lsst \n'
+cd $REPOS
+git clone https://github.com/lsst/obs_lsst.git
+cd daf_butler
+git checkout tickets/DM-31640
+git reset origin/tickets/DM-31640 --hard
+git pull
+pip install -r requirements.txt
+pip install -e .
+
+printf 'Setting up lsst/obs-lsst \n'
 cd $REPOS
 git clone https://github.com/lsst/daf_butler.git
 cd daf_butler
