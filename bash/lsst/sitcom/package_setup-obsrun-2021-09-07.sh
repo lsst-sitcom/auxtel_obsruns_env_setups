@@ -62,28 +62,28 @@ fi
 echo 'Repositories will cloned and setup in the directory:'$REPOS"\n"
 mkdir -v ${REPOS}
 
-# Check if folders are already present before installing
-printf 'Setting up lsst/obs_lsst \n'
-cd $REPOS
-git clone https://github.com/lsst/obs_lsst.git
-cd daf_butler
-git checkout tickets/DM-31640
-git reset origin/tickets/DM-31640 --hard
-git pull
-pip install -r requirements.txt
-pip install -e .
-
-printf 'Setting up lsst/obs-lsst \n'
+printf 'Setting up lsst/daf_butler \n'
 cd $REPOS
 git clone https://github.com/lsst/daf_butler.git
 cd daf_butler
-git checkout tickets/DM-31623
-git reset origin/tickets/DM-31623 --hard
+git fetch --all
+git checkout tickets/DM-31623_pin
+git reset origin/tickets/DM-31623_pin --hard
 git pull
-pip install -r requirements.txt
-pip install -e .
+setup -j -r .
+scons opt=3 -j 4
 
-# Check if folders are already present before installing
+printf 'Setting up lsst/obs_lsst \n'
+cd $REPOS
+git clone https://github.com/lsst/obs_lsst.git
+cd obs_lsst
+git fetch --all
+git checkout tickets/DM-31640_pin
+git reset origin/tickets/DM-31640_pin --hard
+git pull
+setup -j -r .
+scons opt=3 -j 4
+
 printf 'Setting up lsst-dm/Spectractor \n'
 cd $REPOS
 git clone https://github.com/lsst-dm/Spectractor.git
