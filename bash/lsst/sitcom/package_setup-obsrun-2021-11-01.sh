@@ -68,8 +68,7 @@ printf 'Setting up lsst-dm/Spectractor \n'
 cd $REPOS
 git clone https://github.com/lsst-dm/Spectractor.git
 cd Spectractor
-git checkout tickets/DM-29598
-git reset origin/tickets/DM-29598 --hard
+git reset origin/master --hard
 git pull
 pip install -r requirements.txt
 pip install -e .
@@ -95,6 +94,16 @@ git checkout tickets/DM-31522
 git reset origin/tickets/DM-31522 --hard
 git pull
 
+printf '\nSetting up lsst-dm/obs_lsst \n'
+cd $REPOS
+git clone https://github.com/lsst/obs_lsst.git
+cd obs_lsst
+setup -j -r .
+scons opt=3 -j 4
+git fetch --all
+git reset --hard origin/tickets/DM-31997
+
+
 printf '\nSetting up lsst-ts/cwfs \n'
 cd $REPOS
 git clone https://github.com/lsst-ts/cwfs.git
@@ -118,8 +127,8 @@ cd $REPOS
 git clone https://github.com/lsst-ts/ts_externalscripts.git
 cd ts_externalscripts
 git fetch --all
-git checkout tickets/DM-31949
-git reset origin/tickets/DM-31949 --hard
+git checkout tickets/DM-31995
+git reset origin/tickets/DM-31995 --hard
 git pull
 setup -j -r .
 
@@ -138,8 +147,8 @@ cd $REPOS
 git clone https://github.com/lsst-ts/ts_standardscripts.git
 cd ts_standardscripts
 git fetch --all
-git checkout tickets/DM-31949
-git reset origin/tickets/DM-31949 --hard
+git checkout tickets/DM-32420
+git reset origin/tickets/DM-32420 --hard
 git pull
 setup -j -r .
 
@@ -170,7 +179,7 @@ printf "setup -j ts_standardscripts -r "$REPOS"ts_standardscripts \n" >> $FILE_P
 printf "setup -j ts_observatory_control -r "$REPOS"ts_observatory_control \n" >> $FILE_PATH
 printf "setup -j ts_observing_utilities -r "$REPOS"ts_observing_utilities \n" >> $FILE_PATH
 printf "setup -j cwfs -r "$REPOS"cwfs \n" >> $FILE_PATH
-
+printf "setup -j obs_lsst -r "$REPOS"obs_lsst \n" >> $FILE_PATH
 
 #check that ~/notebooks/.user_setups exists
 USER_SETUP_PATH=$HOME"/notebooks/.user_setups"
