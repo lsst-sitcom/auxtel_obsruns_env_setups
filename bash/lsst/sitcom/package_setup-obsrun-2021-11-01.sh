@@ -88,20 +88,21 @@ cd $REPOS
 git clone https://github.com/lsst-sitcom/rapid_analysis.git
 cd rapid_analysis
 setup -j -r .
-scons opt=3 -j 4
 git fetch --all
 git checkout tickets/DM-31522
 git reset origin/tickets/DM-31522 --hard
 git pull
+scons opt=3 -j 4
 
 printf '\nSetting up lsst-dm/obs_lsst \n'
 cd $REPOS
 git clone https://github.com/lsst/obs_lsst.git
 cd obs_lsst
 setup -j -r .
-scons opt=3 -j 4
+git checkout tickets/DM-31997
 git fetch --all
 git reset --hard origin/tickets/DM-31997
+scons opt=3 -j 4
 
 
 printf '\nSetting up lsst-ts/cwfs \n'
