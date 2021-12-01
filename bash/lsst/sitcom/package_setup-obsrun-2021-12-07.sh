@@ -73,24 +73,14 @@ git pull
 pip install -r requirements.txt
 pip install -e .
 
-printf '\nSetting up lsst-dm/obs_lsst \n'
-cd $REPOS
-git clone https://github.com/lsst/obs_lsst.git
-cd obs_lsst
-setup -j -r .
-git checkout tickets/DM-32729
-git fetch --all
-git reset --hard origin/tickets/DM-32729
-git pull
-scons opt=3 -j 4
-
 printf '\nSetting up lsst-dm/atmospec \n'
 cd $REPOS
 git clone https://github.com/lsst-dm/atmospec.git
 cd atmospec
 setup -j -r .
 git fetch --all
-git reset origin/main --hard
+git checkout tickets/DM-32596
+git reset origin/tickets/DM-32596 --hard
 git pull
 scons opt=3 -j 4
 
@@ -105,6 +95,16 @@ git reset origin/tickets/DM-31522 --hard
 git pull
 scons opt=3 -j 4
 
+printf '\nSetting up lsst-dm/obs_lsst \n'
+cd $REPOS
+git clone https://github.com/lsst/obs_lsst.git
+cd obs_lsst
+setup -j -r .
+git checkout tickets/DM-32729
+git fetch --all
+git reset --hard origin/tickets/DM-32729
+git pull
+scons opt=3 -j 4
 
 printf '\nSetting up lsst-ts/cwfs \n'
 cd $REPOS
