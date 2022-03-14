@@ -13,7 +13,7 @@ set -e
 source ${LOADSTACK}
 
 ## Verify the proper build cycle is used
-LSST_IMAGE='w_2022_06_c0024.000'
+LSST_IMAGE='w_2022_11_c0024.006'
 
 printf "This run uses the image of ${LSST_IMAGE}\n"
 
@@ -26,7 +26,7 @@ else
 fi
 
 # Verify the proper jupyter build is being used
-REQUIRED_BUILD='lsst-scipipe-1.0.0'
+REQUIRED_BUILD='lsst-scipipe-3.0.0'
 if [ ${LSST_CONDA_ENV_NAME} == ${REQUIRED_BUILD} ]; then
   printf "Conda environment is Correct\n"
 else
@@ -39,7 +39,7 @@ fi
 setup lsst_distrib
 
 ## Verify the proper lsst_distrib is loaded
-LSST_DISTRIB_VER='w_2022_06'
+LSST_DISTRIB_VER='w_2022_11'
 
 RVAL=$(eups list lsst_distrib)
 if [[ $RVAL == *"${LSST_DISTRIB_VER}"* ]]; then
@@ -80,10 +80,10 @@ git clone https://github.com/lsst-dm/Spectractor.git
 cd Spectractor
 setup -j -r .
 git fetch --all
-git checkout tickets/DM-33578
-git reset origin/tickets/DM-33578 --hard
+git checkout tickets/DM-33973
+git reset origin/tickets/DM-33973 --hard
 git pull
-scons opt=3 -j 4
+# scons opt=3 -j 4
 
 printf '\nSetting up lsst-dm/atmospec \n'
 cd $REPOS
@@ -91,8 +91,8 @@ git clone https://github.com/lsst-dm/atmospec.git
 cd atmospec
 setup -j -r .
 git fetch --all
-git checkout tickets/DM-33578
-git reset origin/tickets/DM-33578 --hard
+git checkout tickets/DM-33973
+git reset origin/tickets/DM-33973 --hard
 git pull
 scons opt=3 -j 4
 
@@ -102,8 +102,8 @@ git clone https://github.com/lsst-sitcom/rapid_analysis.git
 cd rapid_analysis
 setup -j -r .
 git fetch --all
-git checkout tickets/DM-34041
-git reset origin/tickets/DM-34041 --hard
+git checkout tickets/DM-33973
+git reset origin/tickets/DM-33973 --hard
 git pull
 scons opt=3 -j 4
 
