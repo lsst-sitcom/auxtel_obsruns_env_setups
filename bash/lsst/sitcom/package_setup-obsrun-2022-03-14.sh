@@ -161,8 +161,8 @@ cd $REPOS
 git clone https://github.com/lsst-ts/ts_observing_utilities.git
 cd ts_observing_utilities
 git fetch --all
-git checkout tickets/DM-33973
-git reset origin/tickets/DM-33973 --hard
+git checkout tickets/DM-33973b
+git reset origin/tickets/DM-33973b --hard
 git pull
 setup -j -r .
 
