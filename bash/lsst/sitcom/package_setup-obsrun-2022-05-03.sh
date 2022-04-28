@@ -71,16 +71,16 @@ mkdir -v ${REPOS}
 # The first few repos come from Merlin's updating of this site
 # https://github.com/stubbslab/PCWG-AuxTel/blob/main/setup_script.md
 
-printf 'Setting up lsst-dm/Spectractor \n'
-cd $REPOS
-git clone https://github.com/lsst-dm/Spectractor.git
-cd Spectractor
-setup -j -r .
-git fetch --all
-git checkout tickets/${BRANCH}
-git reset origin/tickets/${BRANCH} --hard
-git pull
-# scons opt=3 -j 4
+# printf 'Setting up lsst-dm/Spectractor \n'
+# cd $REPOS
+# git clone https://github.com/lsst-dm/Spectractor.git
+# cd Spectractor
+# setup -j -r .
+# git fetch --all
+# git checkout tickets/${BRANCH}
+# git reset origin/tickets/${BRANCH} --hard
+# git pull
+
 
 printf '\nSetting up lsst-dm/atmospec \n'
 cd $REPOS
@@ -88,8 +88,8 @@ git clone https://github.com/lsst-dm/atmospec.git
 cd atmospec
 setup -j -r .
 git fetch --all
-git checkout tickets/${BRANCH}
-git reset origin/tickets/${BRANCH} --hard
+#git checkout tickets/${BRANCH}
+#git reset origin/tickets/${BRANCH} --hard
 git pull
 scons opt=3 -j 4
 
@@ -194,7 +194,7 @@ cat <<EOT >> $FILE_PATH
 
 EOT
 
-printf "setup -j spectractor -r "$REPOS"Spectractor \n" >> $FILE_PATH
+# printf "setup -j spectractor -r "$REPOS"Spectractor \n" >> $FILE_PATH
 printf "setup -j summit_utils -r "$REPOS"rapid_analysis \n" >> $FILE_PATH
 printf "setup -j summit_extras -r "$REPOS"rapid_analysis \n" >> $FILE_PATH
 printf "setup -j atmospec -r "$REPOS"atmospec \n" >> $FILE_PATH
@@ -203,7 +203,6 @@ printf "setup -j ts_standardscripts -r "$REPOS"ts_standardscripts \n" >> $FILE_P
 printf "setup -j ts_observatory_control -r "$REPOS"ts_observatory_control \n" >> $FILE_PATH
 printf "setup -j ts_observing_utilities -r "$REPOS"ts_observing_utilities \n" >> $FILE_PATH
 printf "setup -j cwfs -r "$REPOS"cwfs \n" >> $FILE_PATH
-# printf "setup -j ts_config_attcs -r "$REPOS"ts_config_attcs \n" >> $FILE_PATH
 # printf "setup -j obs_lsst -r "$REPOS"obs_lsst \n" >> $FILE_PATH
 
 #check that ~/notebooks/.user_setups exists
