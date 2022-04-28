@@ -15,7 +15,7 @@ source ${LOADSTACK}
 ## Verify the proper build cycle is used
 LSST_IMAGE='w_2022_17_c0025.000'
 
-# Jira ticket number (and branch) to suppor this run
+# Jira ticket number (and branch) to support this run
 BRANCH='DM-34581'
 
 printf "This run uses the image of ${LSST_IMAGE}\n"
@@ -105,6 +105,8 @@ git pull
 scons opt=3 -j 4
 
 printf '\nSetting up lsst-sitcom/summit_extras \n'
+printf 'Failed tests are allowed for this package'
+set +e
 cd $REPOS
 git clone https://github.com/lsst-sitcom/summit_extras.git
 cd summit_extras
@@ -115,6 +117,8 @@ git reset origin/tickets/${BRANCH} --hard
 git pull
 scons opt=3 -j 4
 
+# set back to exit on failure
+set -e
 # printf '\nSetting up lsst-dm/obs_lsst \n'
 # cd $REPOS
 # git clone https://github.com/lsst/obs_lsst.git
