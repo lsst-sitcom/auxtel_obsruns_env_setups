@@ -9,7 +9,7 @@
 # set to exit when any command fails
 set -e
 
-# This script is ONLY to be used for the AuxTel run of 2021-11-01
+# This script is ONLY to be used for the AuxTel run of 2022-04-29
 source ${LOADSTACK}
 
 ## Verify the proper build cycle is used
@@ -199,8 +199,8 @@ cat <<EOT >> $FILE_PATH
 EOT
 
 # printf "setup -j spectractor -r "$REPOS"Spectractor \n" >> $FILE_PATH
-printf "setup -j summit_utils -r "$REPOS"rapid_analysis \n" >> $FILE_PATH
-printf "setup -j summit_extras -r "$REPOS"rapid_analysis \n" >> $FILE_PATH
+printf "setup -j summit_utils -r "$REPOS"summit_utils \n" >> $FILE_PATH
+printf "setup -j summit_extras -r "$REPOS"summit_extras \n" >> $FILE_PATH
 printf "setup -j atmospec -r "$REPOS"atmospec \n" >> $FILE_PATH
 printf "setup -j ts_externalscripts -r "$REPOS"ts_externalscripts \n" >> $FILE_PATH
 printf "setup -j ts_standardscripts -r "$REPOS"ts_standardscripts \n" >> $FILE_PATH
