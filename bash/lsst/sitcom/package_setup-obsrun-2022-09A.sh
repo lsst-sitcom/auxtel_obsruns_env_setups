@@ -129,6 +129,14 @@ git fetch --all
 setup -j -r .
 scons
 
+printf '\nSetting up lsst-ts/ts_wep \n'
+cd $REPOS
+git clone https://github.com/lsst-ts/ts_wep.git
+cd cwfs
+git fetch --all
+setup -j -r .
+scons
+
 printf '\nSetting up lsst-ts/ts_observatory_control \n'
 cd $REPOS
 git clone https://github.com/lsst-ts/ts_observatory_control.git
@@ -198,6 +206,7 @@ printf "setup -j ts_standardscripts -r "$REPOS"ts_standardscripts \n" >> $FILE_P
 printf "setup -j ts_observatory_control -r "$REPOS"ts_observatory_control \n" >> $FILE_PATH
 printf "setup -j ts_observing_utilities -r "$REPOS"ts_observing_utilities \n" >> $FILE_PATH
 printf "setup -j cwfs -r "$REPOS"cwfs \n" >> $FILE_PATH
+printf "setup -j ts_wep -r "$REPOS"ts_wep \n" >> $FILE_PATH
 
 #check that ~/notebooks/.user_setups exists
 USER_SETUP_PATH=$HOME"/notebooks/.user_setups"
