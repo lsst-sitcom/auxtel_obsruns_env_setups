@@ -10,7 +10,7 @@ TICKET='DM-36118'
 MESSAGE="Initial Branch Creation for 2022-09A AuxTel Support. Empty commit with no content changes."
 
 
-PACKAGES=('lsst-ts/ts_observatory_control' 'lsst-ts/ts_observing_utilities' 'lsst-ts/ts_standardscripts' 'lsst-ts/ts_externalscripts' 'lsst-ts/cwfs' 'lsst/atmospec' 'lsst-sitcom/summit_utils')
+PACKAGES=('lsst-ts/ts_observatory_control' 'lsst-ts/ts_observing_utilities' 'lsst-ts/ts_standardscripts' 'lsst-ts/ts_externalscripts' 'lsst-ts/cwfs' 'lsst/atmospec' 'lsst-sitcom/summit_utils' 'lsst-sitcom/summit_extras')
  
 # directory where repos are to be created
 REPOS="/tmp/setup_branches/"
