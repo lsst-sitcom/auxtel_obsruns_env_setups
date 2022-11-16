@@ -9,11 +9,11 @@
 # set to exit when any command fails
 set -e
 
-# This script is ONLY to be used for the AuxTel run of 2022-10B
+# This script is ONLY to be used for the AuxTel run of 2022-11A
 source ${LOADSTACK}
 
 ## Verify the proper build cycle is used
-LSST_IMAGE='w_2022_44_c0026.014'
+LSST_IMAGE='w_2022_44_c0027.000'
 
 # Jira ticket number (used as a branch) to support this run
 TICKET='DM-36852'
