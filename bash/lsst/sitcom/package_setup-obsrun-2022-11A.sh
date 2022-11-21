@@ -13,7 +13,7 @@ set -e
 source ${LOADSTACK}
 
 ## Verify the proper build cycle is used
-LSST_IMAGE='w_2022_44_c0027.000'
+LSST_IMAGE='w_2022_46_c0027.001'
 
 # Jira ticket number (used as a branch) to support this run
 TICKET='DM-36852'
@@ -42,7 +42,7 @@ fi
 setup lsst_distrib
 
 ## Verify the proper lsst_distrib is loaded
-LSST_DISTRIB_VER='w_2022_44'
+LSST_DISTRIB_VER='w_2022_46'
 
 RVAL=$(eups list lsst_distrib)
 if [[ $RVAL == *"${LSST_DISTRIB_VER}"* ]]; then
