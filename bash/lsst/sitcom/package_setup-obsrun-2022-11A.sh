@@ -88,7 +88,7 @@ git fetch --all
 git checkout tickets/${TICKET}
 git reset origin/tickets/${TICKET} --hard
 git pull
-scons opt=3 -j 4
+scons opt=3 -j 1
 
 printf '\nSetting up lsst-sitcom/summit_extras \n'
 printf 'Failed tests are allowed for this package'
