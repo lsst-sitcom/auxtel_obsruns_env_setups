@@ -29,7 +29,7 @@ else
 fi
 
 # Verify the proper jupyter build is being used
-REQUIRED_BUILD='lsst-scipipe-4.1.0'
+REQUIRED_BUILD='lsst-scipipe-5.0.0'
 if [ ${LSST_CONDA_ENV_NAME} == ${REQUIRED_BUILD} ]; then
   printf "Conda environment is correct\n"
 else
