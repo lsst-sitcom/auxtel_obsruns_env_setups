@@ -19,9 +19,13 @@ def testEnvironment(bash_script, installed_packages_directory='~/auxtel_obsruns_
     else:
         raise IOError(f'File {bash_script} not found in {script_dir}')
     
-    eupsPkg = getoutput('grep LSST_DISTRIB_VER\= %s'%scriptName)
-    lsstPkg = eupsPkg.split("'")[-2]
+    eupsPkg = getoutput('grep LSST_IMAGE\= %s'%scriptName)
+    #get lsstPkg
+    tmp=(eupsPkg.split("'")[-2]).split("_")
+    lsstPkg="_".join(tmp[0:3])
+    print(lsstPkg)
     rightEnvironment['lsst_distrib'] = lsstPkg
+
     # Now read the directories from the auto-op-packages directory
     autoDir = os.path.expanduser('~/auto-op-env-packages')
     dirList = os.listdir(autoDir)
@@ -48,7 +52,7 @@ def testEnvironment(bash_script, installed_packages_directory='~/auxtel_obsruns_
                         print(f"{pkgName} is correct.")
                     else:
                         correct.append(False)
-                        print(f"{pkgName} is wrong!  Should be {rightEnvironment[pkgName]}")
+                        print(f"{pkgName} of {items[-2] }is wrong!  Should be {rightEnvironment[pkgName]}")
                     foundPkg = True
                 else:
                     try:
