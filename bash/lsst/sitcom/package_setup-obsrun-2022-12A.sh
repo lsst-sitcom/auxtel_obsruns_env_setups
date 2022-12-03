@@ -91,9 +91,9 @@ git pull
 scons opt=3 -j 1
 
 printf '\nSetting up lsst-sitcom/summit_extras \n'
-printf 'Failed tests are allowed for this package'
+# printf 'Failed tests are allowed for this package'
 # Remove exit on failure
-set +e
+# set +e
 cd $REPOS
 git clone https://github.com/lsst-sitcom/summit_extras.git
 cd summit_extras
@@ -105,7 +105,7 @@ git pull
 scons opt=3 -j 4
 
 # set back to exit on failure
-set -e
+# set -e
 
 printf '\nSetting up lsst-ts/cwfs \n'
 cd $REPOS
