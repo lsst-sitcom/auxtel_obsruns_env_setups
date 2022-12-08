@@ -13,7 +13,7 @@ set -e
 source ${LOADSTACK}
 
 ## Verify the proper build cycle is used
-LSST_IMAGE='w_2022_49_c0027.003'
+LSST_IMAGE='w_2022_49_c0028.001'
 
 # Jira ticket number (used as a branch) to support this run
 TICKET='DM-37190'
