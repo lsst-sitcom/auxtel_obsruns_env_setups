@@ -1,8 +1,5 @@
 #!/usr/bin/env bash
-# This script should be executed (not sourced!) from a Nublado terminal.
-# It clones (ssh) and creates the branches for each repo
-
-# This script is not ready to be run yet
+# This script clones (ssh) and creates the branches for each repo
 
 # Ticket associated with this run
 TICKET='DM-37682'
