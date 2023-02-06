@@ -1,13 +1,10 @@
 #!/usr/bin/env bash
-# This script should be executed (not sourced!) from a Nublado terminal.
-# It clones (ssh) and creates the branches for each repo
-
-# This script is not ready to be run yet
+# This script clones (ssh) and creates the branches for each repo
 
 # Ticket associated with this run
-TICKET='DM-37556'
+TICKET='DM-37682'
 # Commit message to open the branch
-MESSAGE="Initial Branch Creation for 2022-01A AuxTel Support. Empty commit with no content changes."
+MESSAGE="Initial Branch Creation for 2023-01B AuxTel Support. Empty commit with no content changes."
 
 
 PACKAGES=('lsst-ts/ts_observatory_control' 'lsst-ts/ts_observing_utilities' 'lsst-ts/ts_standardscripts' 'lsst-ts/ts_externalscripts' 'lsst-ts/cwfs' 'lsst/atmospec' 'lsst-sitcom/summit_utils' 'lsst-sitcom/summit_extras')
