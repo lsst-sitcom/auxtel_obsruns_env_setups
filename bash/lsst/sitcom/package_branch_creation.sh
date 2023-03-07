@@ -2,10 +2,7 @@
 # This script clones (ssh) and creates the branches for each repo
 
 # Ticket associated with this run
-TICKET='DM-37897'
-# Commit message to open the branch
-MESSAGE="Initial Branch Creation for 2023-02A AuxTel Support. Empty commit with no content changes."
-
+TICKET='DM-38077'
 
 PACKAGES=('lsst-ts/ts_observatory_control' 'lsst-ts/ts_observing_utilities' 'lsst-ts/ts_standardscripts' 'lsst-ts/ts_externalscripts' 'lsst-ts/cwfs' 'lsst/atmospec' 'lsst-sitcom/summit_utils' 'lsst-sitcom/summit_extras')
  
@@ -35,7 +32,6 @@ do
     continue
   fi
   git checkout -b tickets/${TICKET}
-  git commit -m "$MESSAGE" --allow-empty
   git push --set-upstream origin tickets/$TICKET
   echo "$pkg branch preparation completed \n"
 done
