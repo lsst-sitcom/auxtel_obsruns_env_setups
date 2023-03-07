@@ -9,7 +9,6 @@
 # set to exit when any command fails
 set -e
 
-# This script is ONLY to be used for the AuxTel run of 2023-01B
 source ${LOADSTACK}
 
 ## Verify the proper build cycle is used
