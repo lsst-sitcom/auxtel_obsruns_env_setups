@@ -58,7 +58,7 @@ printf "Creating a new ~/notebooks/.user_setups file \n"
 
 # Declare repos of interest
 # where packages are held on Nublado
-REPOS="/net/obs_env/auto_base_packages/"
+REPOS="/net/obs-env/auto_base_packages/"
 # where file with setup statements are held
 REPOS_FILE_PATH=$REPOS"auto_env_setup.sh"
 
